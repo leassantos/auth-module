@@ -16,7 +16,7 @@ Este repositório faz parte de um estudo guiado e contínuo com foco em boas pr�
 
 ## 🧱 Tecnologias utilizadas
 
-- Java 17+
+- Java 21+
 - Spring Boot 3.x
 - Maven
 - Lombok
