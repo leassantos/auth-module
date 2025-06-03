@@ -5,10 +5,10 @@ import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.leasantosbr.auth.infrastructure.persistence.entities.UserEntity;
+import com.leasantosbr.auth.domain.entities.User;
 
-public interface UserJpaRepository extends JpaRepository<UserEntity, UUID>{
+public interface UserJpaRepository extends JpaRepository<User, UUID>{
 
-	Optional<UserEntity> findByEmail(String email);
+	Optional<User> findByEmail(String email);
 	boolean existsByEmail(String email);
 }

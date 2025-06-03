@@ -5,7 +5,6 @@ import java.util.UUID;
 
 import com.leasantosbr.auth.domain.entities.User;
 import com.leasantosbr.auth.domain.repositories.UserRepository;
-import com.leasantosbr.auth.infrastructure.persistence.mappers.UserEntityMapper;
 
 public class UserRepositoryImpl implements UserRepository{
 
@@ -17,13 +16,12 @@ public class UserRepositoryImpl implements UserRepository{
 
 	@Override
 	public Optional<User> findByEmail(String email) {
-		return userJpaRepository.findByEmail(email)
-				.map(UserEntityMapper::toDomain);
+		return userJpaRepository.findByEmail(email);
 	}
 
 	@Override
-	public void save(User user) {
-		userJpaRepository.save(UserEntityMapper.toEntity(user));
+	public User save(User user) {
+		return userJpaRepository.save(user);
 		
 	}
 
@@ -34,7 +32,6 @@ public class UserRepositoryImpl implements UserRepository{
 
 	@Override
 	public Optional<User> findById(UUID id) {
-		return userJpaRepository.findById(id)
-				.map(UserEntityMapper::toDomain);
+		return userJpaRepository.findById(id);
 	}
 }
